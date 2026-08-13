@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import api from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
 import "./FavoritesPage.css";
 
@@ -12,7 +12,7 @@ const FavoritesPage = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const res = await axios.get("/api/pokemon");
+        const res = await api.get("/api/pokemon");
         setAllPokemons(res.data);
       } catch (error) {
         console.error("Error fetching pokemons:", error);

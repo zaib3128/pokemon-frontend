@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PokemonGrid.css";
-import axios from "axios";
+import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
 
 const PokemonGrid = () => {
@@ -10,7 +10,7 @@ const PokemonGrid = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const res = await axios.get("/api/pokemon");
+        const res = await api.get("/api/pokemon");
         setPokemons(res.data);
       } catch (error) {
         console.error("Failed to fetch Pokémon:", error);

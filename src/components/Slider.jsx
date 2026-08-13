@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Slider.css";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
-import axios from "axios";
+import {  AnimatePresence } from "framer-motion";
+import api from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
 
 const Slider = () => {
@@ -14,7 +14,7 @@ const Slider = () => {
   const { user, toggleFavorite } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get("/api/pokemon").then((res) => setPokemons(res.data));
+    api.get("/api/pokemon").then((res) => setPokemons(res.data));
   }, []);
 
   if (!pokemons.length) return null;
@@ -41,6 +41,7 @@ const Slider = () => {
     }
     try {
       await toggleFavorite(currentPokemon._id);
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       alert("Something went wrong while saving.");
     }

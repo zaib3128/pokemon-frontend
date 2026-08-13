@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+ import api from "../api/axios";
 import "./GamesSection.css";
 
 const GamesSection = () => {
@@ -13,7 +13,7 @@ const GamesSection = () => {
 
   // Fetch Pokémon data on mount
   useEffect(() => {
-    axios.get("/api/pokemon").then((res) => {
+    api.get("/api/pokemon").then((res) => {
       setPokemons(res.data);
     });
   }, []);

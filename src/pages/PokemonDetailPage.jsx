@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
 import "./PokemonDetailPage.css";
 
@@ -13,7 +13,7 @@ const PokemonDetailPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
+    api
       .get(`/api/pokemon/${id}`)
       .then((res) => {
         setPokemon(res.data);
@@ -39,6 +39,7 @@ const PokemonDetailPage = () => {
     }
     try {
       await toggleFavorite(pokemon._id);
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       alert("Error saving favorite");
     }

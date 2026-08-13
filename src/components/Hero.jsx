@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
-import { motion } from "framer-motion";
-import axios from "axios";
+
+ import api from "../api/axios";
 
 const FALLBACK_IMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png";
 
@@ -9,7 +9,7 @@ const Hero = () => {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/pokemon").then((res) => setPokemons(res.data));
+    api.get("/api/pokemon").then((res) => setPokemons(res.data));
   }, []);
 
   const heroImages = pokemons.length

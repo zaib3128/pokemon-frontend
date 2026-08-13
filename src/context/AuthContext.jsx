@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
+ import api from "../api/axios";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -9,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      axios
+      api
         .get("/api/auth/me", { headers: { Authorization: `Bearer ${token}` } })
         .then((res) => setUser(res.data))
         .catch(() => {
@@ -20,13 +21,13 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (username, password) => {
-    const res = await axios.post("/api/auth/login", { username, password });
+    const res = await api.post("/api/auth/login", { username, password });
     localStorage.setItem("token", res.data.token);
     setUser(res.data.user);
   };
 
   const signup = async (username, email, password) => {
-  const res = await axios.post("/api/auth/signup", { 
+  const res = await api.post("/api/auth/signup", { 
     username, 
     email, 
     password 
@@ -46,7 +47,7 @@ export const AuthProvider = ({ children }) => {
   const toggleFavorite = async (pokemonId) => {
     const token = localStorage.getItem("token");
     if (!token) throw new Error("Please log in first");
-    const res = await axios.post(
+    const res = await api.post(
       `/api/pokemon/favorite/${pokemonId}`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
