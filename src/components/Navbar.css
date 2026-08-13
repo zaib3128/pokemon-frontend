@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo img {
+  width: 110px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  font-family: "Comic Neue", cursive;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #143783;
+  opacity: 1;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.user-greeting {
+  font-family: "Comic Neue", cursive;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn {
+  font-family: "Comic Neue", cursive;
+  padding: 8px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #000;
+}
+
+.btn-fill {
+  background: #143783;
+  border: 2px solid #143783;
+  color: wheat;
+}
+
+.btn-fill:hover {
+  background: transparent;
+  color: wheat;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  .nav-links {
+    gap: 15px;
+    font-size: 18px;
+  }
+}
+
+/* --- Hamburger Base (Hidden by default on desktop) --- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+/* Ensure desktop wrapper behaves normally */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 35px;
+  width: 100%;
+}
+
+/* --- Mobile View for Navbar --- */
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: row; /* Keeps logo left, hamburger right */
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* The Dropdown Menu */
+  .nav-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Anchors right beneath the navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Dark solid background so it is readable */
+    padding: 20px 0 30px 0;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  /* When the 'active' class is applied via state */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+}

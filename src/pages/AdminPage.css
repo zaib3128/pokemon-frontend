@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Comic+Neue:wght@400;700&display=swap');
+
+.admin-page-wrapper {
+  min-height: 100vh;
+  background: #00122e; /* Deep dark blue background */
+  padding: 100px 50px 50px 50px;
+  color: white;
+  font-family: "Comic Neue", cursive;
+}
+
+.admin-access-denied {
+  text-align: center;
+  margin-top: 100px;
+  color: #ff6b6b;
+  font-family: "Luckiest Guy", cursive;
+}
+
+.admin-header {
+  margin-bottom: 30px;
+}
+
+.admin-header h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.admin-header p {
+  font-size: 18px;
+  color: #a0b3ce;
+  margin: 0;
+}
+
+/* --- Split Screen Grid Layout --- */
+.admin-grid-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr; /* Form on left, list expands on right */
+  gap: 30px;
+  align-items: start;
+}
+
+.admin-card-box {
+  background: #061730; /* Dark card background */
+  border: 1px solid #142a4a;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.box-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* --- Form Styles --- */
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.admin-form-group label {
+  font-size: 14px;
+  color: #a0b3ce;
+  margin-bottom: 8px;
+}
+
+.admin-form-group input,
+.admin-form-group textarea {
+  background: #0c213d;
+  border: 1px solid #1a3860;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  font-size: 15px;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.admin-blue-btn {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin-blue-btn:hover {
+  background: #2563eb;
+}
+
+.admin-outline-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- List Row Styles --- */
+.admin-pokedex-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #102647;
+}
+
+.admin-list-row:last-child {
+  border-bottom: none;
+}
+
+.row-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.row-left img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.pokemon-row-name {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.row-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-pill-btn {
+  background: transparent;
+  border: 1px solid #2d4b75;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-family: "Comic Neue", cursive;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-pill-btn:hover {
+  background: white;
+  color: #00122e;
+}
+
+@media (max-width: 900px) {
+  .admin-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Tablet & Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .admin-grid-layout {
+    /* Stacks the form on top of the list */
+    grid-template-columns: 1fr; 
+  }
+  
+  .admin-page-wrapper {
+    padding: 80px 30px 30px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-page-wrapper {
+    padding: 80px 15px 20px 15px;
+  }
+
+  .admin-header h1 {
+    font-size: 36px;
+  }
+
+  .admin-card-box {
+    padding: 20px 15px;
+  }
+
+  .row-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .row-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

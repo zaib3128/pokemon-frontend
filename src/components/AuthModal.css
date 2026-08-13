@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Comic+Neue:wght@400;700&display=swap');
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 10, 25, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: #031329;
+  border: 1px solid #142a4a;
+  border-radius: 20px;
+  padding: 40px 35px;
+  width: 90%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  font-family: "Comic Neue", cursive;
+}
+
+/* --- Close Button Style --- */
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #a0b3ce;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+  color: white;
+}
+
+.modal-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-form input {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+  color: #111;
+}
+
+.modal-form input:focus {
+  outline: 2px solid #3b82f6;
+}
+
+.modal-submit-btn {
+  margin-top: 10px;
+  background: #1f3b73;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 25px;
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-submit-btn:hover {
+  background: #2a52a1;
+}
+
+.modal-toggle-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #a0b3ce;
+}
+
+.modal-toggle-text span {
+  color: #60a5fa;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.modal-error {
+  color: #f87171;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* --- Mobile View for Modal --- */
+@media (max-width: 480px) {
+  .modal-card {
+    padding: 30px 20px; /* Less padding on small screens */
+    width: 95%;
+  }
+
+  .modal-title {
+    font-size: 26px; /* Slightly smaller text */
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 15px;
+  }
+}

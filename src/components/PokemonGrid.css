@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+.pokemons-section {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #00102b, #002356);
+  padding: 100px 50px 80px 50px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.pokedex-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 56px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.pokedex-subtitle {
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  color: #a0c0f0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.pokedex-card {
+  border-radius: 20px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pokedex-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-wrapper {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+}
+
+.card-name {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 28px;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.card-excerpt {
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.5;
+}

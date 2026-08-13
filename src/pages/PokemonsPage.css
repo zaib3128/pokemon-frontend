@@ -1,0 +1,494 @@
+.pokemons-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.pokemons-header {
+  padding: 100px 50px 20px 50px;
+  color: white;
+  font-family: "Comic Neue", cursive;
+}
+
+.pokemons-header h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 48px;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+}
+
+.pokemons-header p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* =========================================
+   ADD POKEMON BUTTON
+========================================= */
+
+.add-pokemon-btn {
+  margin-top: 20px;
+  background-color: #1f3b73;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-pokemon-btn:hover {
+  background-color: #2a52a1;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   HORIZONTAL POKEMON LIST
+========================================= */
+
+.pokemons-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* =========================================
+   FULL-WIDTH HORIZONTAL CARD
+========================================= */
+
+.pokemon-horizontal-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 350px;
+  position: relative;
+  overflow: visible;
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LEFT SIDE - IMAGE
+========================================= */
+
+.pokemon-image-wrapper {
+  flex: 0 0 350px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  align-self: stretch;
+}
+
+.pokemon-image-wrapper img {
+  width: 100%;
+  max-width: 350px;
+  max-height: 400px;
+  object-fit: contain;
+  margin-bottom: -20px;
+  display: block;
+}
+
+/* =========================================
+   MIDDLE - CONTENT
+========================================= */
+
+.pokemon-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #111;
+  padding: 30px 20px;
+}
+
+.pokemon-name {
+  font-family: "Times New Roman", serif;
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.pokemon-desc {
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+  font-family: "Comic Neue", cursive;
+}
+
+/* =========================================
+   FAVORITE BUTTON
+========================================= */
+
+.fav-btn-square {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  width: 130px;
+  min-width: 130px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.fav-btn-square:hover {
+  transform: scale(1.05);
+  background: #f5f5f5;
+}
+
+.fav-btn-square.active {
+  background: #ffe66d;
+  border-color: #d4a900;
+}
+
+/* =========================================
+   RIGHT SIDE - OWNER ACTIONS
+========================================= */
+
+.owner-actions-right {
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.action-btn-pill {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-family: "Comic Neue", cursive;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.action-btn-pill:hover {
+  background: white;
+  color: black;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.pokemon-form-container {
+  padding: 0 50px;
+  max-width: 600px;
+}
+
+.pokemon-form {
+  background: #0a192f;
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #0f2243;
+  border: 1px solid #1f3b73;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #60a5fa;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* =========================================
+   FORM BUTTONS
+========================================= */
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.submit-btn {
+  background-color: #1f3b73;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2a52a1;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* =========================================
+   OLD CARD ACTIONS
+   Kept in case other components still use them
+========================================= */
+
+.owner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.edit-btn,
+.delete-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .pokemon-horizontal-card {
+    min-height: 300px;
+    padding-right: 25px;
+  }
+
+  .pokemon-image-wrapper {
+    flex: 0 0 280px;
+  }
+
+  .pokemon-image-wrapper img {
+    max-width: 280px;
+    max-height: 330px;
+  }
+
+  .pokemon-content {
+    gap: 12px;
+    padding: 20px 10px;
+  }
+
+  .pokemon-name {
+    font-size: 32px;
+  }
+
+  .pokemon-desc {
+    max-width: 220px;
+    font-size: 13px;
+  }
+
+  .fav-btn-square {
+    width: 115px;
+    min-width: 115px;
+  }
+
+  .owner-actions-right {
+    gap: 8px;
+  }
+
+  .action-btn-pill {
+    padding: 7px 15px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .pokemons-header {
+    padding: 80px 20px 20px;
+  }
+
+  .pokemons-header h1 {
+    font-size: 38px;
+  }
+
+  .pokemons-header p {
+    font-size: 14px;
+  }
+
+  .pokemon-horizontal-card {
+    flex-direction: column;
+    min-height: auto;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .pokemon-image-wrapper {
+    flex: none;
+    width: 100%;
+    height: 250px;
+    align-self: auto;
+  }
+
+  .pokemon-image-wrapper img {
+    width: 250px;
+    max-width: 250px;
+    max-height: 280px;
+    margin-bottom: 0;
+  }
+
+  .pokemon-content {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .pokemon-name {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  .pokemon-desc {
+    max-width: 90%;
+    font-size: 14px;
+  }
+
+  .fav-btn-square {
+    width: auto;
+    min-width: 180px;
+  }
+
+  .owner-actions-right {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .action-btn-pill {
+    padding: 8px 20px;
+  }
+
+  .pokemon-form-container {
+    padding: 0 20px;
+    max-width: none;
+  }
+
+  .pokemon-form {
+    padding: 20px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .pokemons-header h1 {
+    font-size: 32px;
+  }
+
+  .pokemon-image-wrapper {
+    height: 210px;
+  }
+
+  .pokemon-image-wrapper img {
+    width: 210px;
+    max-width: 210px;
+  }
+
+  .pokemon-name {
+    font-size: 28px;
+  }
+
+  .owner-actions-right {
+    flex-direction: column;
+  }
+
+  .action-btn-pill {
+    width: 140px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+/* --- Mobile View for Pokemons Section --- */
+@media (max-width: 600px) {
+  .pokemons-section {
+    padding: 90px 20px 40px 20px;
+  }
+  
+  .pokedex-title {
+    font-size: 40px;
+  }
+  
+  .grid-container {
+    /* Slightly smaller minimum card size for small phones */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}

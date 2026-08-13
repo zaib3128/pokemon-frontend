@@ -1,0 +1,58 @@
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3a8a, #000);
+}
+
+.auth-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.auth-form h2 {
+  color: #ffcb05;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 32px;
+}
+
+.auth-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+  outline: none;
+}
+
+.auth-btn {
+  background: #ffcb05;
+  color: #3b4cca;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: "Luckiest Guy", cursive;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.auth-btn:hover {
+  transform: scale(1.05);
+}
+
+.error-msg {
+  color: #ff4d4d;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+}

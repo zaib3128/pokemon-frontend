@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.games-page-wrapper {
+  min-height: 100vh;
+  background: #001633;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  padding-bottom: 100px;
+}
+
+/* =========================================
+   WHO'S THAT POKEMON GUESSING GAME
+========================================= */
+.guessing-game-section {
+  padding-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Header container aligned to top-left */
+.game-header-text {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.game-main-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 56px;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.game-subtitle {
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.score-display {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.mystery-pokemon {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  margin-bottom: 35px;
+  transition: filter 0.5s ease;
+}
+
+.mystery-pokemon.hidden {
+  filter: brightness(0);
+}
+
+.mystery-pokemon.revealed {
+  filter: brightness(1) drop-shadow(0px 10px 15px rgba(0,0,0,0.4));
+}
+
+.options-container {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 850px;
+}
+
+.option-btn {
+  background: #0b1c3a;
+  border: 1px solid #2a4365;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 14px;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-width: 180px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.option-btn:hover:not(:disabled) {
+  background: #143783;
+  border-color: #4a75b5;
+}
+
+.option-btn.correct {
+  border: 2px solid #4ade80;
+  color: #4ade80;
+}
+
+.option-btn.incorrect {
+  border: 2px solid #f87171;
+  color: #f87171;
+}
+
+.option-btn.dimmed {
+  opacity: 0.4;
+}
+
+.result-area {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.result-text {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.next-round-btn {
+  background: #143783;
+  border: none;
+  color: white;
+  padding: 12px 36px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.next-round-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   OFFICIAL GAMES GRID
+========================================= */
+.official-games-section {
+  padding: 80px 50px;
+  background: #000c1f;
+  margin-top: 60px;
+}
+
+.official-title {
+  text-align: center;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 42px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.official-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #a0aec0;
+  margin-bottom: 50px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.official-game-card {
+  background: #0f1c32;
+  border-radius: 16px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.official-game-card:hover {
+  transform: translateY(-5px);
+  background: #152744;
+}
+
+.official-game-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.official-game-card p {
+  font-size: 16px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.play-now-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.play-now-link:hover {
+  color: #93c5fd;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Mobile View for Games --- */
+@media (max-width: 768px) {
+  .game-header-text, .official-games-section {
+    padding: 0 20px;
+  }
+  
+  .game-main-title {
+    font-size: 38px;
+  }
+  
+  .mystery-pokemon {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .option-btn {
+    min-width: 140px;
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
