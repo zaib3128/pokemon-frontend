@@ -12,7 +12,7 @@ const FavoritesPage = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const res = await api.get("/api/pokemon");
+        const res = await api.get("api/pokemon");
         setAllPokemons(res.data);
       } catch (error) {
         console.error("Error fetching pokemons:", error);

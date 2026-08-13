@@ -14,7 +14,7 @@ const Slider = () => {
   const { user, toggleFavorite } = useContext(AuthContext);
 
   useEffect(() => {
-    api.get("/api/pokemon").then((res) => setPokemons(res.data));
+    api.get("api/pokemon").then((res) => setPokemons(res.data));
   }, []);
 
   if (!pokemons.length) return null;

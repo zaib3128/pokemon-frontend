@@ -10,7 +10,7 @@ const PokemonGrid = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const res = await api.get("/api/pokemon");
+        const res = await api.get("api/pokemon");
         setPokemons(res.data);
       } catch (error) {
         console.error("Failed to fetch Pokémon:", error);

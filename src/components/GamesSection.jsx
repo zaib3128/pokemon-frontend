@@ -13,7 +13,7 @@ const GamesSection = () => {
 
   // Fetch Pokémon data on mount
   useEffect(() => {
-    api.get("/api/pokemon").then((res) => {
+    api.get("api/pokemon").then((res) => {
       setPokemons(res.data);
     });
   }, []);

@@ -20,7 +20,7 @@ const AdminPage = () => {
 
   const fetchPokemons = async () => {
     try {
-      const res = await api.get("/api/pokemon");
+      const res = await api.get("api/pokemon");
       const sorted = res.data.sort((a, b) => (a.order || 0) - (b.order || 0));
       setPokemons(sorted);
     } catch (err) {
@@ -62,7 +62,7 @@ const AdminPage = () => {
     if (window.confirm("Are you sure you want to delete this Pokémon?")) {
       const token = user?.token || localStorage.getItem("token");
       try {
-        await api.delete(`/api/pokemon/${id}`, {
+        await api.delete(`api/pokemon/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (editingId === id) handleCancel();
@@ -80,9 +80,9 @@ const AdminPage = () => {
 
     try {
       if (editingId) {
-        await api.put(`/api/pokemon/${editingId}`, formData, config);
+        await api.put(`api/pokemon/${editingId}`, formData, config);
       } else {
-        await api.post("/api/pokemon", formData, config);
+        await api.post("api/pokemon", formData, config);
       }
       handleCancel();
       fetchPokemons();

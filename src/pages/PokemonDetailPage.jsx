@@ -14,7 +14,7 @@ const PokemonDetailPage = () => {
 
   useEffect(() => {
     api
-      .get(`/api/pokemon/${id}`)
+      .get(`api/pokemon/${id}`)
       .then((res) => {
         setPokemon(res.data);
         setLoading(false);

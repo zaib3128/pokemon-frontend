@@ -30,7 +30,7 @@ const PokemonsPage = () => {
 
   const fetchPokemons = async () => {
     try {
-      const res = await api.get("/api/pokemon");
+      const res = await api.get("api/pokemon");
 
       const sorted = res.data.sort(
         (a, b) => (a.order || 0) - (b.order || 0)
@@ -130,7 +130,7 @@ const PokemonsPage = () => {
     }
 
     try {
-      await api.delete(`/api/pokemon/${id}`, {
+      await api.delete(`api/pokemon/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -174,13 +174,13 @@ const PokemonsPage = () => {
     try {
       if (editMode) {
         await api.put(
-          `/api/pokemon/${currentPokemonId}`,
+          `api/pokemon/${currentPokemonId}`,
           formData,
           config
         );
       } else {
         await api.post(
-          "/api/pokemon",
+          "api/pokemon",
           formData,
           config
         );
