@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Slider.css";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart } from "react-icons/fa";
-import {  AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import api from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
 
